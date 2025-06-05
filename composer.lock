@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9cb189b7f556abcdb2b667daad562361",
+    "content-hash": "cc22b53b3ac5674e1d77d156c005658c",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -318,6 +318,119 @@
                 "source": "https://github.com/chrisharrison/php-array-of/tree/1.1"
             },
             "time": "2020-12-18T15:43:46+00:00"
+        },
+        {
+            "name": "codebider/generate-crud",
+            "version": "v0.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AwaisJ670/laravel-crud-bot.git",
+                "reference": "cac09d0c98100c4c04ae7d93e90b183d91b691a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AwaisJ670/laravel-crud-bot/zipball/cac09d0c98100c4c04ae7d93e90b183d91b691a5",
+                "reference": "cac09d0c98100c4c04ae7d93e90b183d91b691a5",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0",
+                "php": ">=7.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5|^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "CodeBider\\GenerateCrud\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CodeBider\\GenerateCrud\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Awais Javaid",
+                    "email": "info.awaisjavaid@gmail.com"
+                }
+            ],
+            "description": "An artisan command to automate the migration,model,resource controller, views and routes",
+            "keywords": [
+                "crud",
+                "crud bot",
+                "crud generator",
+                "laravel",
+                "laravel crud generator",
+                "laravel package"
+            ],
+            "support": {
+                "issues": "https://github.com/AwaisJ670/laravel-crud-bot/issues",
+                "source": "https://github.com/AwaisJ670/laravel-crud-bot/tree/v0.0.5"
+            },
+            "time": "2025-05-31T17:12:45+00:00"
+        },
+        {
+            "name": "codebider/trait-generator-tool",
+            "version": "v0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AwaisJ670/traitGenerator.git",
+                "reference": "4b6c1b9414bf614fea9acf11cfb82ff9d50b543a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AwaisJ670/traitGenerator/zipball/4b6c1b9414bf614fea9acf11cfb82ff9d50b543a",
+                "reference": "4b6c1b9414bf614fea9acf11cfb82ff9d50b543a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0",
+                "php": ">=7.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "CodeBider\\TraitGenerator\\TraitGeneratorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CodeBider\\TraitGenerator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Awais Javaid",
+                    "email": "info.awaisjavaid@gmail.com"
+                }
+            ],
+            "description": "A Laravel package to generate trait using an Artisan command.",
+            "keywords": [
+                "artisan",
+                "generator",
+                "laravel",
+                "trait"
+            ],
+            "support": {
+                "issues": "https://github.com/AwaisJ670/traitGenerator/issues",
+                "source": "https://github.com/AwaisJ670/traitGenerator/tree/v0.0.1"
+            },
+            "time": "2025-04-22T05:09:02+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -6749,6 +6862,75 @@
                 "source": "https://github.com/laravel/sail"
             },
             "time": "2025-05-19T13:19:21+00:00"
+        },
+        {
+            "name": "laravel/telescope",
+            "version": "v5.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/telescope.git",
+                "reference": "f729607079c20fc0f82b9e3e7d533248d18dc554"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/f729607079c20fc0f82b9e3e7d533248d18dc554",
+                "reference": "f729607079c20fc0f82b9e3e7d533248d18dc554",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "laravel/framework": "^8.37|^9.0|^10.0|^11.0|^12.0",
+                "php": "^8.0",
+                "symfony/console": "^5.3|^6.0|^7.0",
+                "symfony/var-dumper": "^5.0|^6.0|^7.0"
+            },
+            "require-dev": {
+                "ext-gd": "*",
+                "guzzlehttp/guzzle": "^6.0|^7.0",
+                "laravel/octane": "^1.4|^2.0|dev-develop",
+                "orchestra/testbench": "^6.40|^7.37|^8.17|^9.0|^10.0",
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^9.0|^10.5|^11.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Telescope\\TelescopeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Telescope\\": "src/",
+                    "Laravel\\Telescope\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                },
+                {
+                    "name": "Mohamed Said",
+                    "email": "mohamed@laravel.com"
+                }
+            ],
+            "description": "An elegant debug assistant for the Laravel framework.",
+            "keywords": [
+                "debugging",
+                "laravel",
+                "monitoring"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/telescope/issues",
+                "source": "https://github.com/laravel/telescope/tree/v5.9.0"
+            },
+            "time": "2025-06-03T13:58:03+00:00"
         },
         {
             "name": "mockery/mockery",
