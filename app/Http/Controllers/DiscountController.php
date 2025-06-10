@@ -1,8 +1,9 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Traits\ShopifyResponser;
 use Illuminate\Http\Request;
+use App\Traits\ShopifyResponser;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 
 class DiscountController extends Controller
@@ -87,9 +88,10 @@ class DiscountController extends Controller
             ];
 
             $response = $shop->api()->graph($mutation, $variables);
+            //Log::info('Shopify API Response', ['response' => $response]);
             $result = $response['body']['data']['discountAutomaticBasicCreate'] ?? null;
 
-            if (!empty($result['userErrors']) && $response['status'] !== 200) {
+            if (!empty($result['userErrors']) && count($result['userErrors']) > 0) {
                 return $this->errorResponse('Shopify returned errors.', 422, $result['userErrors']);
             }
 

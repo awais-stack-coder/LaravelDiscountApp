@@ -8,11 +8,12 @@ import {
     Select,
     Form,
     Button,
+    ButtonGroup,
     InlineError,
 } from '@shopify/polaris';
 import axiosinstance from '../utils/axiosHandler';
 
-export default function DiscountForm() {
+export default function DiscountForm({ onCancel }) {
     const [discountType, setDiscountType] = useState('percentage');
     const [title, setTitle] = useState('');
     const [discountValue, setDiscountValue] = useState('');
@@ -52,7 +53,7 @@ export default function DiscountForm() {
             setErrors({});
         } catch (error) {
             console.error('Error creating discount:', error);
-            shopify.toast.show(error.response.data.message, { duration: 3000 ,isError: true});
+            shopify.toast.show(error.response.data.message, { duration: 3000, isError: true });
         } finally {
             setLoading(false);
         }
@@ -60,7 +61,7 @@ export default function DiscountForm() {
 
     return (
         <>
-            <div style={{ marginTop: 'var(--p-space-500)' }}>
+            <div style={{ marginTop: 'var(--p-space-150)' }}>
                 <TextContainer>
                     <Text variant="headingMd" as="h2">Discounts</Text>
                     <Text tone="subdued" as="p" fontWeight="bold">
@@ -70,7 +71,7 @@ export default function DiscountForm() {
             </div>
             <Card sectioned>
                 <Form onSubmit={handleSubmit}>
-                    <div style={{ marginBottom: '10px' }}>
+                    <div style={{ marginBottom: 'var(--p-space-150)' }}>
                         <FormLayout>
                             <TextField
                                 id="Title"
@@ -102,10 +103,16 @@ export default function DiscountForm() {
                             error={errors.discountValue}
                         />
                     </FormLayout.Group>
-                    <div style={{ marginTop: '20px' }}>
-                        <Button submit primary loading={loading}>
-                            Save Discount
-                        </Button>
+                    <div style={{ marginTop: 'var(--p-space-500)' }}>
+                        <ButtonGroup>
+                            <Button onClick={onCancel}>
+                                Cancel
+                            </Button>
+
+                            <Button submit variant="primary" loading={loading}>
+                                Save
+                            </Button>
+                        </ButtonGroup>
                     </div>
                 </Form>
             </Card>

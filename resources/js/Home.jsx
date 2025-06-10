@@ -1,6 +1,8 @@
 import CardComponent from './components/Card';
-import React from 'react';
+import React, { useState } from 'react';
 import DiscountForm from './components/DiscountForm';
+import { Button } from '@shopify/polaris';
+import { PlusIcon } from '@shopify/polaris-icons';
 const peoples = [
     { id: 1, content: 'Awais' },
     { id: 2, content: 'Ali' },
@@ -14,10 +16,14 @@ const peoples = [
     { id: 10, content: 'I am not sure either' },
 ];
 export default function Home() {
+    const [showForm, setShowForm] = useState(false);
     return (
         <>
+            <div style={{ float: 'right' }}>
+                <Button icon={PlusIcon} onClick={() => setShowForm(true)}>Add discount</Button>
+            </div>
             {/* <CardComponent peoples={peoples}/> */}
-            <DiscountForm />
+            {showForm && <DiscountForm onCancel={() => setShowForm(false)} />}
         </>
     );
 }
